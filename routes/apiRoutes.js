@@ -63,6 +63,12 @@ module.exports = function(app) {
 //     res.json({ ok: true });
 //   });
 
+    app.get("/api/notes", function(req, res){
+        fs.readFile("../db/db.json").then(function(){
+            
+        })
+    });
+
     app.post("/api/notes", function(req, res){
         let newNote = req.body;
         let currentNotes;
@@ -75,6 +81,6 @@ module.exports = function(app) {
     });
 
     app.delete("/api/notes/:id", function(req, res) {
-            
+
     })
 };
